@@ -1,0 +1,13 @@
+pool:
+vmImage: 'ubuntu-latest' # Adjust VM image if needed
+stages:
+- stage: Build
+jobs:
+- job: Build_Job
+steps:
+- task: Maven@3 # Use the appropriate Maven version task
+inputs:
+mavenVersion: '3.x' # Specify your Maven version
+mavenPomFile: 'pom.xml' # Path to your pom.xml file
+goals: 'clean package' # Maven goals to execute (clean and package)
+publishMavenArtifacts: true # Optionally publish artifac
